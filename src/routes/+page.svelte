@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	import { loginII, logout, isAuthenticated, principalId } from './auth.js';
 	import copy_icon from '$lib/images/copy_icon.png';
 	import './index.scss';
@@ -48,36 +48,7 @@
 	{/if}
 </section>
 
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-h1 {
-		width: 100%;
-	}  
-	
-	/* .welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	} 
-</style>-->
-<script>
+<!-- <script>
 	import { _client_canister_actor } from './+page.js';
 	import { loginII, logout, isAuthenticated, principalId } from './auth.js';
 	import { Principal } from '@dfinity/principal';
@@ -222,63 +193,66 @@ h1 {
 				});
 			});
 	}
-</script>
+</script> -->
 
-<!-- <div class="notifications-container">
-	<h1>Notifications for Principal</h1>
-	<p class="principal-id">{TARGET_PRINCIPAL}</p>
+<!-- <main>
+	<div class="notifications-container">
+		<h1>Notifications for Principal</h1>
+		<p class="principal-id">{TARGET_PRINCIPAL}</p>
 
-	{#if $messagesMapStore && $messagesMapStore.has(TARGET_PRINCIPAL)}
-		{@const notifications = $messagesMapStore.get(TARGET_PRINCIPAL)}
-		<p class="notification-count">
-			Total notifications: {notifications.length}
-		</p>
+		{#if $messagesMapStore && $messagesMapStore.has(TARGET_PRINCIPAL)}
+			{@const notifications = $messagesMapStore.get(TARGET_PRINCIPAL)}
+			<p class="notification-count">
+				Total notifications: {notifications.length}
+			</p>
 
-		<div class="card-list">
-			{#each notifications as notification}
-				<div class="card">
-					<h2 class="card-title">Event ID: {notification.eventId}</h2>
-					<p>
-						<strong>Timestamp:</strong>
-						{formatTimestamp(notification.timestamp)}
-					</p>
-					<p><strong>Namespace:</strong> {notification.namespace}</p>
-					<details>
-						<summary>More details</summary>
-						<p><strong>ID:</strong> {notification.id}</p>
+			<div class="card-list">
+				{#each notifications as notification}
+					<div class="card">
+						<h2 class="card-title">Event ID: {notification.eventId}</h2>
 						<p>
-							<strong>Source:</strong>
-							{notification.source.toText()}
+							<strong>Timestamp:</strong>
+							{formatTimestamp(notification.timestamp)}
 						</p>
-						<p>
-							<strong>Pre-Event ID:</strong>
-							{notification.preEventId || 'None'}
-						</p>
-						<p>
-							<strong>Filter:</strong>
-							{notification.filter || 'None'}
-						</p>
-						<div class="data-section">
-							<h4>Data:</h4>
-							<pre>{renderICRC16(notification.data)}</pre>
-						</div>
-						{#if notification.headers}
-							<div class="headers-section">
-								<h4>Headers:</h4>
-								<pre>{JSON.stringify(notification.headers, null, 2)}</pre>
+						<p><strong>Namespace:</strong> {notification.namespace}</p>
+						<details>
+							<summary>More details</summary>
+							<p><strong>ID:</strong> {notification.id}</p>
+							<p>
+								<strong>Source:</strong>
+								{notification.source.toText()}
+							</p>
+							<p>
+								<strong>Pre-Event ID:</strong>
+								{notification.preEventId || 'None'}
+							</p>
+							<p>
+								<strong>Filter:</strong>
+								{notification.filter || 'None'}
+							</p>
+							<div class="data-section">
+								<h4>Data:</h4>
+								<pre>{renderICRC16(notification.data)}</pre>
 							</div>
-						{/if}
-					</details>
-				</div>
-			{/each}
-		</div>
-	{:else}
-		<p>No notifications available for this principal</p>
-	{/if}
-</div> -->
-<main>
+							{#if notification.headers}
+								<div class="headers-section">
+									<h4>Headers:</h4>
+									<pre>{JSON.stringify(notification.headers, null, 2)}</pre>
+								</div>
+							{/if}
+						</details>
+					</div>
+				{/each}
+			</div>
+		{:else}
+			<p>No notifications available for this principal</p>
+		{/if}
+	</div>
+</main> -->
+
+<!-- <main>
 	{#if loggedIn}
-		<!-- <h2>Your aVa id is:</h2>
+		<h2>Your aVa id is:</h2>
 		<span class="user_principal"
 			>{principal}
 			<button on:click={copyValue}><img class="copy_icon" src={copy_icon} alt="Copy ID" /></button>
@@ -286,7 +260,7 @@ h1 {
 		<br />
 		<h2>Save your this id and Internet Identity number for later use. <br /></h2>
 		<br /> -->
-		<div class="notifications-container">
+<!-- <div class="notifications-container">
 			<h1>Notifications for Principal</h1>
 			<p class="principal-id">{TARGET_PRINCIPAL}</p>
 
@@ -338,8 +312,18 @@ h1 {
 				<p>No notifications available for this principal</p>
 			{/if}
 		</div>
-		<button class="logout" on:click={handleLogout}> Logout</button>
-	{:else}
+		<button class="logout" on:click={handleLogout}> Logout</button>-->
+<!-- {:else}
 		<button class="login" on:click={handleLogin}> Please Login with Internet Identity</button>
 	{/if}
-</main>
+</main> -->
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex: 0.6;
+	}
+</style>

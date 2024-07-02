@@ -224,7 +224,7 @@ h1 {
 	}
 </script>
 
-<div class="notifications-container">
+<!-- <div class="notifications-container">
 	<h1>Notifications for Principal</h1>
 	<p class="principal-id">{TARGET_PRINCIPAL}</p>
 
@@ -275,19 +275,71 @@ h1 {
 	{:else}
 		<p>No notifications available for this principal</p>
 	{/if}
-</div>
-<div>
+</div> -->
+<main>
 	{#if loggedIn}
-		<h2>Your aVa id is:</h2>
+		<!-- <h2>Your aVa id is:</h2>
 		<span class="user_principal"
 			>{principal}
 			<button on:click={copyValue}><img class="copy_icon" src={copy_icon} alt="Copy ID" /></button>
 		</span>
 		<br />
 		<h2>Save your this id and Internet Identity number for later use. <br /></h2>
-		<br />
+		<br /> -->
+		<div class="notifications-container">
+			<h1>Notifications for Principal</h1>
+			<p class="principal-id">{TARGET_PRINCIPAL}</p>
+
+			{#if $messagesMapStore && $messagesMapStore.has(TARGET_PRINCIPAL)}
+				{@const notifications = $messagesMapStore.get(TARGET_PRINCIPAL)}
+				<p class="notification-count">
+					Total notifications: {notifications.length}
+				</p>
+
+				<div class="card-list">
+					{#each notifications as notification}
+						<div class="card">
+							<h2 class="card-title">Event ID: {notification.eventId}</h2>
+							<p>
+								<strong>Timestamp:</strong>
+								{formatTimestamp(notification.timestamp)}
+							</p>
+							<p><strong>Namespace:</strong> {notification.namespace}</p>
+							<details>
+								<summary>More details</summary>
+								<p><strong>ID:</strong> {notification.id}</p>
+								<p>
+									<strong>Source:</strong>
+									{notification.source.toText()}
+								</p>
+								<p>
+									<strong>Pre-Event ID:</strong>
+									{notification.preEventId || 'None'}
+								</p>
+								<p>
+									<strong>Filter:</strong>
+									{notification.filter || 'None'}
+								</p>
+								<div class="data-section">
+									<h4>Data:</h4>
+									<pre>{renderICRC16(notification.data)}</pre>
+								</div>
+								{#if notification.headers}
+									<div class="headers-section">
+										<h4>Headers:</h4>
+										<pre>{JSON.stringify(notification.headers, null, 2)}</pre>
+									</div>
+								{/if}
+							</details>
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<p>No notifications available for this principal</p>
+			{/if}
+		</div>
 		<button class="logout" on:click={handleLogout}> Logout</button>
 	{:else}
 		<button class="login" on:click={handleLogin}> Please Login with Internet Identity</button>
 	{/if}
-</div>
+</main>

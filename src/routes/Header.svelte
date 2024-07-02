@@ -32,7 +32,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/ava-vs" target="_blank">
+		<a href="https://github.com/ava-vs/event-client" target="_blank">
 			<img src={github} alt="GitHub" />
 		</a>
 	</div>

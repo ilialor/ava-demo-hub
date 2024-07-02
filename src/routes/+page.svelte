@@ -180,8 +180,8 @@ h1 {
 
 	onMount(() => {
 		console.log('onMount start');
-		let res = handleNotifications();
-		console.log('Got res:', res);
+		// let res = handleNotifications();
+		// console.log('Got res:', res);
 		messagesMapStore.update((map) => {
 			map.set(TARGET_PRINCIPAL, [entity]);
 			return map;

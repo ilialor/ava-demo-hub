@@ -1,10 +1,11 @@
-<script>
+<!-- <script>
 	import { loginII, logout, isAuthenticated, principalId } from './auth.js';
 	import copy_icon from '$lib/images/copy_icon.png';
 	import './index.scss';
 
 	let loggedIn = false;
 	let principal = '';
+	
 	principalId.subscribe((value) => {
 		principal = value;
 	});
@@ -32,7 +33,7 @@
 	<meta name="description" content="Client for aVa Event Hub demo app" />
 </svelte:head>
 
-<section>
+<div>
 	{#if loggedIn}
 		<h2>Your aVa id is:</h2>
 		<span class="user_principal"
@@ -46,7 +47,7 @@
 	{:else}
 		<button class="login" on:click={handleLogin}> Please Login with Internet Identity</button>
 	{/if}
-</section>
+</div> -->
 
 <!-- <script>
 	import { _client_canister_actor } from './+page.js';
@@ -317,13 +318,3 @@
 		<button class="login" on:click={handleLogin}> Please Login with Internet Identity</button>
 	{/if}
 </main> -->
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-</style>

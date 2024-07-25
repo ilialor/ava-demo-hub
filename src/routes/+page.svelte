@@ -1,11 +1,11 @@
-<!-- <script>
+<script>
 	import { loginII, logout, isAuthenticated, principalId } from './auth.js';
 	import copy_icon from '$lib/images/copy_icon.png';
 	import './index.scss';
 
 	let loggedIn = false;
 	let principal = '';
-	
+
 	principalId.subscribe((value) => {
 		principal = value;
 	});
@@ -47,7 +47,7 @@
 	{:else}
 		<button class="login" on:click={handleLogin}> Please Login with Internet Identity</button>
 	{/if}
-</div> -->
+</div>
 
 <!-- <script>
 	import { _client_canister_actor } from './+page.js';
